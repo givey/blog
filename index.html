@@ -2,23 +2,26 @@
 layout: default
 ---
 
-<div class="home">
-
-  <ul class="post-list">
+<div class="home container">
+  <div class="post-list">
 
     {% for post in paginator.posts %}
-      <li>
+      <div class="row">
 
-        <h1>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h1>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <p>
-          {{ post.content }}
-        </p>
-      </li>
+        <div class="col-sm-8 col-sm-offset-2">
+
+          <h1>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h1>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <p>
+            {{ post.content }}
+          </p>
+        </div>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
+
   <div class="row">
     <nav>
       <ul class="pager">
