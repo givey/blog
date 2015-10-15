@@ -19,7 +19,20 @@ layout: default
       </li>
     {% endfor %}
   </ul>
+  <div class="row">
+    <nav>
+      <ul class="pager">
+        {% if paginator.previous_page %}
+          <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer posts</a></li>
+        {% endif %}
+        {% if paginator.next_page %}
+          <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older posts</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  </div>
 
 </div>
