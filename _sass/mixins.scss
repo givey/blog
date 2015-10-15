@@ -1,0 +1,117 @@
+// For mixins only
+
+@function strip-unit($num) {
+  @if $num != 'auto' {
+    @return $num / ($num * 0 + 1);
+  }
+  @else {
+    @return $num;
+  }
+}
+
+@mixin responsive-image {
+  @media(min-width: 1400px) {
+    background-size: 100% auto;
+    background-size: cover;
+  }
+  @media(max-width: 1400px) {
+    background-size: auto 100%;
+    background-size: cover;
+  }
+}
+
+// Takes the property value and a list of pixel sizes to produce sizes in both pixel and rem units
+// Usage:     @include sizing(margin, 10, 0, 20);
+// Produces:  margin: 10px 0 20px;
+//            margin: 1rem, 0, 2rem;
+
+@mixin sizing($property, $pixels...) {
+  $max: length($pixels);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($pixels, $i));
+
+    @if $value == 'auto' {
+      $pxValues: #{$pxValues + $value};
+      $remValues: #{$remValues + $value};
+    }
+    @else if $value != 0 {
+      $pxValues: #{$pxValues + $value + 'px'};
+      $remValues: #{$remValues + $value/10 + 'rem'};
+    }
+    @else {
+      $pxValues: #{$pxValues + $value};
+      $remValues: #{$remValues + $value};
+    }
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + ' '};
+       $remValues: #{$remValues + ' '};
+    }
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+
+// Font mixins to use in place of @extends
+
+@mixin soft-bold {
+  font-family: "proxima-nova-soft";
+  font-weight: 600;
+}
+
+@mixin soft-regular {
+  font-family: "proxima-nova-soft";
+  font-weight: 400;
+}
+
+@mixin soft-medium {
+  font-family: "proxima-nova-soft";
+  font-weight: 500;
+}
+
+@mixin prefixer ($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      -webkit-#{$property}: $value;
+    } @else if $prefix == moz {
+      -moz-#{$property}: $value;
+    } @else if $prefix == ms {
+      -ms-#{$property}: $value;
+    } @else if $prefix == o {
+      -o-#{$property}: $value;
+    } @else if $prefix == spec {
+      #{$property}: $value;
+    } @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+// Flexbox mixin for vertical alignment.
+// Use on the parent element of the items you want aligning.
+// Supports IE 10+, FF, Chrome, Safari 6.1+
+
+@mixin vertical-align {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@mixin flex ($grow, $shrink, $basis) {
+  -webkit-box-flex: $shrink;
+  -moz-box-flex: $shrink;
+  -webkit-flex: $grow $shrink $basis;
+  -ms-flex: $grow $shrink $basis;
+  flex: $grow $shrink $basis;
+}

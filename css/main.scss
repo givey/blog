@@ -22,5 +22,13 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "bootstrap",
-        "bootstrap-theme"
+        "bootstrap-theme",
+        "variables",
+        "mixins"
 ;
+
+
+img {
+  max-width: 100%;
+}
+
