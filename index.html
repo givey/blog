@@ -8,13 +8,12 @@ layout: default
     {% for post in paginator.posts %}
       <div class="row">
 
-        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-sm-8 col-sm-offset-2 post">
 
           <h1>
             <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           </h1>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-          <p>
+          <span class="post-meta text-muted">{{ post.date | date: "%b %-d, %Y" }}</span>
           {{ post.excerpt }}
           <p><a class="btn btn-primary" href="{{ post.url }}" role="button">Read more <i class="fa fa-arrow-circle-right"></i></a></p>
         </div>
