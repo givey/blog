@@ -32,6 +32,10 @@ img {
   max-width: 100%;
 }
 
+.tmblr-full {
+  padding: 30px 0;
+  text-align: center;
+}
 #footer {
   @include sizing(padding-bottom, 70px);
   @include sizing(padding-top, 110px);
