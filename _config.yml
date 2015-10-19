@@ -9,6 +9,7 @@ twitter_username: giveyhq
 github_username:  givey
 gems: ['jekyll-paginate', 'haml']
 paginate: 5
+excerpt_separator: "</p>"
 
 # Build settings
 markdown: kramdown

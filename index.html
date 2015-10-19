@@ -15,8 +15,8 @@ layout: default
           </h1>
           <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
           <p>
-            {{ post.content }}
-          </p>
+          {{ post.excerpt }}
+          <p><a class="btn btn-primary" href="{{ post.url }}" role="button">Read more <i class="fa fa-arrow-circle-right"></i></a></p>
         </div>
       </div>
     {% endfor %}
