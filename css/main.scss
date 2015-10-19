@@ -41,6 +41,18 @@ a:hover {
   text-decoration: none;
 }
 
+body {
+  background-color: $givey-lightest-grey;
+  font-family: 'proxima-nova-soft';
+  margin-top: 90px;
+}
+
+.post {
+  background-color: $givey-white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  padding: 15px 30px;
+}
 
 .navbar {
   background-color: $givey-white;
