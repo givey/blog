@@ -15,7 +15,7 @@ layout: default
           </h1>
           <span class="post-meta text-muted">{{ post.date | date: "%b %-d, %Y" }}</span>
           {{ post.excerpt }}
-          <p><a class="btn btn-primary" href="{{ post.url }}" role="button">Read more <i class="fa fa-arrow-circle-right"></i></a></p>
+          <p><a class="btn btn-primary btn-sm" href="{{ post.url }}" role="button">Read more <i class="icon icon-g-arrowright"></i></a></p>
         </div>
       </div>
     {% endfor %}
@@ -25,10 +25,18 @@ layout: default
     <nav>
       <ul class="pager">
         {% if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer posts</a></li>
+          <li class="previous-page">
+            <a class="btn btn-clear" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+              <span class="icon icon-angle-left"></span> Newer posts
+            </a>
+          </li>
         {% endif %}
         {% if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older posts</a></li>
+          <li class="next-page">
+            <a class="btn btn-clear" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+              Older posts <span class="icon icon-angle-right"></span>
+            </a>
+          </li>
         {% endif %}
       </ul>
     </nav>
