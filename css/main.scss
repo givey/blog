@@ -29,8 +29,24 @@
         "buttons"
 ;
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $givey-darkest-grey;
+}
+
+p,
+li {
+  @include soft-regular;
+  @include sizing(font-size, 16px);
+  color: $givey-dark-grey;
+  line-height: 1.6;
+}
 
 img {
+  margin: 0 auto;
   max-width: 100%;
 }
 
