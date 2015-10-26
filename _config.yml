@@ -1,5 +1,5 @@
 # Site settings
-title: Givey Blog
+title: The Givey Blog
 email: support@givey.com
 description: > # this means to ignore newlines until "baseurl:"
   Stay up to date with all the latest Givey goings on, connect with causes you care about and keep your finger on the pulse of charity news!
@@ -7,6 +7,9 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://blog.givey.com" # the base hostname & protocol for your site
 twitter_username: giveyhq
 github_username:  givey
+gems: ['jekyll-paginate', 'haml']
+paginate: 5
+excerpt_separator: "</p>"
 
 # Build settings
 markdown: kramdown

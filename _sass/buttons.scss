@@ -1,0 +1,67 @@
+.btn {
+  @include soft-medium;
+  @include sizing(font-size, 14px);
+  @include sizing(padding, 10px);
+  border-width: 2px;
+  box-shadow: none;
+
+  &.btn-xs {
+    @include sizing(font-size, 10px);
+    @include sizing(padding, 8px);
+  }
+
+  &.btn-sm {
+    @include sizing(font-size, 12px);
+    @include sizing(padding, 10px);
+  }
+
+  &.btn-lg {
+    @include sizing(font-size, 16px);
+    @include sizing(padding, 14px);
+  }
+
+  &.btn-xl {
+    @include sizing(font-size, 18px);
+    @include sizing(padding, 16px);
+    border-radius: 6px;
+  }
+
+  &.btn-jumbo {
+    @include sizing(font-size, 16px);
+    @include sizing(margin, 30px, 0);
+    @include sizing(padding, 20px);
+    @include sizing(width, 160px);
+    border: 0;
+    border-radius: 6px;
+  }
+
+  &.btn-primary,
+  &.btn-primary:hover,
+  &.btn-primary:active,
+  &.btn-primary:focus {
+    background: $givey-pink;
+    background-image: none;
+    border-color: $givey-pink;
+  }
+}
+
+.btn-clear {
+  background: transparent;
+  border: 2px solid $givey-light-grey;
+  color: $givey-darkest-grey;
+
+  &:hover {
+    background: transparent;
+    color: $givey-darkest-grey;
+  }
+}
+
+.pager {
+  .next-page span {
+    margin-left: 10px;
+  }
+
+  .previous-page span {
+    margin-right: 10px;
+  }
+}

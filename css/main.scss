@@ -4,31 +4,6 @@
 @charset "utf-8";
 
 
-
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
 // Using media queries with like this:
 // @include media-query($on-palm) {
 //     .wrapper {
@@ -46,7 +21,62 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting"
+        "bootstrap",
+        "bootstrap-theme",
+        "variables",
+        "mixins",
+        "footer",
+        "buttons"
 ;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $givey-darkest-grey;
+}
+
+p,
+li {
+  @include soft-regular;
+  @include sizing(font-size, 16px);
+  color: $givey-dark-grey;
+  line-height: 1.6;
+}
+
+img {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.tmblr-full {
+  padding: 30px 0;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  background-color: $givey-lightest-grey;
+  font-family: 'proxima-nova-soft';
+  margin-top: 90px;
+}
+
+.post {
+  background-color: $givey-white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  padding: 15px 30px;
+}
+
+.navbar {
+  background-color: $givey-white;
+  border-bottom: 1px solid $navbar-scrolled-border;
+
+  h2 {
+    margin: 20px;
+  }
+}
